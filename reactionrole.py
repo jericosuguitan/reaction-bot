@@ -5,7 +5,7 @@
 import discord
 #from discord.ext import commands
 
-token = ""
+token = "Nzg5NzAzMzU5NTE4MDgxMDM0.X916kA.wTz_b5lJf3z2P6pSuv65wTMVemQ"
 
 intents = discord.Intents.all() 
 # need intents to be true (in Discord applications website) to properly run
@@ -15,6 +15,18 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
     print("Bot is logged in.")
+
+#@client.event
+#async def on_message(self, message):
+#    print ('on message event')
+#    if message.author.bot:
+#        return
+#
+#    if message.content.lower() == ('hi'):
+#        await message.channel.send('hey!')
+#
+#    elif message.content.lower() == ('ping'):
+#        await message.channel.send('pong!')
 
 @client.event
 async def on_raw_reaction_add(payload):
