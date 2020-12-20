@@ -5,7 +5,7 @@
 import discord
 #from discord.ext import commands
 
-token = "Nzg5NzAzMzU5NTE4MDgxMDM0.X916kA.wTz_b5lJf3z2P6pSuv65wTMVemQ"
+token = ""
 
 intents = discord.Intents.all() 
 # need intents to be true (in Discord applications website) to properly run
