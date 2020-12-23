@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 # Jerico Suguitan
 # Python 3.8 using discord.py
 # 12/18/2020
@@ -14,19 +16,8 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
+    client.login(process.env.BOT_TOKEN)
     print("Bot is logged in.")
-
-#@client.event
-#async def on_message(self, message):
-#    print ('on message event')
-#    if message.author.bot:
-#        return
-#
-#    if message.content.lower() == ('hi'):
-#        await message.channel.send('hey!')
-#
-#    elif message.content.lower() == ('ping'):
-#        await message.channel.send('pong!')
 
 @client.event
 async def on_raw_reaction_add(payload):
