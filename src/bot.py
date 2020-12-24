@@ -1,5 +1,3 @@
-
-
 import os
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
 
@@ -11,7 +9,7 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-    client.login(BOT_TOKEN)
+    client.login(process.env.BOT_TOKEN)
     print("Bot is logged in.")
 
 @client.event
