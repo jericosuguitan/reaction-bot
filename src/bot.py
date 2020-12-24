@@ -1,22 +1,17 @@
-require('dotenv').config()
 
-# Jerico Suguitan
-# Python 3.8 using discord.py
-# 12/18/2020
+
+import os
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
+
 
 import discord
-#from discord.ext import commands
-
-token = ""
-
 intents = discord.Intents.all() 
-# need intents to be true (in Discord applications website) to properly run
 intents.members = True
 client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-    client.login(process.env.BOT_TOKEN)
+    client.login(BOT_TOKEN)
     print("Bot is logged in.")
 
 @client.event
@@ -77,4 +72,4 @@ async def on_raw_reaction_remove(payload):
         else:
             print("Role not found.")
 
-client.run(token)
+client.run(BOT_TOKEN)
