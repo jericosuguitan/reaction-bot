@@ -13,7 +13,7 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
     # client.login(BOT_TOKEN)
-    print("Bot is logged in.")
+    print("Bot is logged in.") 
 
 @client.event
 async def on_raw_reaction_add(payload):
