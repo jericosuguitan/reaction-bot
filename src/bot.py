@@ -4,15 +4,18 @@ load_dotenv()
 import os
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 
-
 import discord
-intents = discord.Intents.all() 
+intents = discord.Intents.all()
 intents.members = True
 client = discord.Client(intents=intents)
 
 @client.event
+async def on_client_error():
+    await client.on_error("error")
+
+@client.event
 async def on_ready():
-    # client.login(BOT_TOKEN)
+    # await client.login(BOT_TOKEN)
     print("Bot is logged in.") 
 
 @client.event

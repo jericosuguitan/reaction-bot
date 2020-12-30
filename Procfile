@@ -1,1 +1,1 @@
-worker: node ./src/reactionrole.py
+worker: py ./src/bot.py
