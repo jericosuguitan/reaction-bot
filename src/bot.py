@@ -9,9 +9,9 @@ intents = discord.Intents.all()
 intents.members = True
 client = discord.Client(intents=intents)
 
-@client.event
-async def on_client_error():
-    await client.on_error("error")
+# @client.event
+# async def on_client_error():
+#     await client.on_error("error")
 
 @client.event
 async def on_ready():
