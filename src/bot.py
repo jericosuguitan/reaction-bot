@@ -15,10 +15,7 @@ client = discord.Client(intents=intents)
 # async def on_client_error():
 #     await client.on_error("error")
 
-@client.event
-async def on_ready():
-        # await client.login(BOT_TOKEN)
-        print("Bot is logged in.")
+
 
 @client.event
 async def on_raw_reaction_add(payload):
@@ -77,5 +74,10 @@ async def on_raw_reaction_remove(payload):
                 print("Member not found.")
         else:
             print("Role not found.")
+
+@client.event
+async def on_ready():
+        # await client.login(BOT_TOKEN)
+        print("Bot is logged in.")
 
 client.run(BOT_TOKEN)
