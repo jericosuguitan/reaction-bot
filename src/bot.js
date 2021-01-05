@@ -1,3 +1,5 @@
+// example but .js aka not very helpful for me at the moment
+
 print("Hello World");
 
 /*
