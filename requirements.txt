@@ -1,1 +1,3 @@
+discord.js
 discord.py
+dotenv
