@@ -74,3 +74,4 @@ settings.py
 # # # SECRET_KEY = os.getenv("EMAIL")
 # # # DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
 [--------------------------------------------]
+ 
