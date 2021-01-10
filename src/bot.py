@@ -78,4 +78,5 @@ async def on_raw_reaction_remove(payload):
         else:
             print("Role not found.")
 
+
 client.run(BOT_TOKEN)
