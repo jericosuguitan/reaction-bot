@@ -26,6 +26,18 @@ async def on_raw_reaction_add(payload):
     if message_id == 789756930741633055:
         guild_id = payload.guild_id
         guild = discord.utils.find(lambda g : g.id == guild_id, client.guilds)
+        
+        # allFams = [discord.utils.get(guild.roles, name='Bloom Fam'), discord.utils.get(guild.roles, name='Hero Fam'), discord.utils.get(guild.roles, name='Sky Bison Fam')]
+        # member = payload.member
+        # famCheck = any(item in member.roles for item in allFams)
+        # # if member already has one of three fam roles 
+        # if famCheck:
+            
+        # else: # not true, aka no fam
+
+        allFams = [discord.utils.get(guild.roles, name='Bloom Fam'), discord.utils.get(guild.roles, name='Hero Fam'), discord.utils.get(guild.roles, name='Sky Bison Fam')]
+        member = payload.member
+        haveFam = any(item in member.roles for item in allFams)
 
         if payload.emoji.name == 'bloom':
             role = discord.utils.get(guild.roles, name='Bloom Fam')
@@ -34,8 +46,12 @@ async def on_raw_reaction_add(payload):
         elif payload.emoji.name == 'skybison':
             role = discord.utils.get(guild.roles, name='Sky Bison Fam')
         else:
-            role = discord.utils.get(guild.roles, name=payload.emoji.name)
-
+            role = discord.utils.get(guild.roles, name= payload.emoji.name)
+            
+        if haveFam & (role in allFams):
+            print("should not assign role")
+            return
+        
         if role is not None:
             member = payload.member
             print(member)
@@ -78,5 +94,6 @@ async def on_raw_reaction_remove(payload):
         else:
             print("Role not found.")
 
+# idea by anna : HERO FAM - daily positive affirmations
 
 client.run(BOT_TOKEN)
