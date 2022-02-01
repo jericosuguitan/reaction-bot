@@ -35,16 +35,27 @@ async def on_raw_reaction_add(payload):
             
         # else: # not true, aka no fam
 
-        allFams = [discord.utils.get(guild.roles, name='Bloom Fam'), discord.utils.get(guild.roles, name='Hero Fam'), discord.utils.get(guild.roles, name='Sky Bison Fam')]
+        # allFams = [discord.utils.get(guild.roles, name='Bloom Fam'), discord.utils.get(guild.roles, name='Hero Fam'), discord.utils.get(guild.roles, name='Sky Bison Fam')]
+        # member = payload.member
+        # haveFam = any(item in member.roles for item in allFams)
+
+        # if payload.emoji.name == 'bloom':
+        #     role = discord.utils.get(guild.roles, name='Bloom Fam')
+        # elif payload.emoji.name == 'hero':
+        #     role = discord.utils.get(guild.roles, name='Hero Fam')
+        # elif payload.emoji.name == 'skybison':
+        #     role = discord.utils.get(guild.roles, name='Sky Bison Fam')
+        # else:
+        #     role = discord.utils.get(guild.roles, name= payload.emoji.name)
+
+        allFams = [discord.utils.get(guild.roles, name='Hero Fam'), discord.utils.get(guild.roles, name='Brace Fam')]
         member = payload.member
         haveFam = any(item in member.roles for item in allFams)
 
-        if payload.emoji.name == 'bloom':
-            role = discord.utils.get(guild.roles, name='Bloom Fam')
-        elif payload.emoji.name == 'hero':
+        if payload.emoji.name == 'hero2':
             role = discord.utils.get(guild.roles, name='Hero Fam')
-        elif payload.emoji.name == 'skybison':
-            role = discord.utils.get(guild.roles, name='Sky Bison Fam')
+        elif payload.emoji.name == 'brace':
+            role = discord.utils.get(guild.roles, name='Brace Fam')
         else:
             role = discord.utils.get(guild.roles, name= payload.emoji.name)
             
@@ -71,13 +82,20 @@ async def on_raw_reaction_remove(payload):
         guild_id = payload.guild_id
         guild = discord.utils.find(lambda g : g.id == guild_id, client.guilds)
 
-        if payload.emoji.name == 'bloom':
-            role = discord.utils.get(guild.roles, name='Bloom Fam')
-        elif payload.emoji.name == 'hero':
+        # if payload.emoji.name == 'bloom':
+        #     role = discord.utils.get(guild.roles, name='Bloom Fam')
+        # elif payload.emoji.name == 'hero':
+        #     role = discord.utils.get(guild.roles, name='Hero Fam')
+        #     # testing: print("remove hero")
+        # elif payload.emoji.name == 'skybison':
+        #     role = discord.utils.get(guild.roles, name='Sky Bison Fam')
+        # else:
+        #     role = discord.utils.get(guild.roles, name=payload.emoji.name)
+        
+        if payload.emoji.name == 'hero2':
             role = discord.utils.get(guild.roles, name='Hero Fam')
-            # testing: print("remove hero")
-        elif payload.emoji.name == 'skybison':
-            role = discord.utils.get(guild.roles, name='Sky Bison Fam')
+        elif payload.emoji.name == 'brace':
+            role = discord.utils.get(guild.roles, name='Brace Fam')
         else:
             role = discord.utils.get(guild.roles, name=payload.emoji.name)
 

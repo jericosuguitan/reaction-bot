@@ -12,5 +12,8 @@ v 1.0.0
 v 1.1.0
 - set fam limit to 1
 
+v 1.1.1 - 1/31/2022
+- removed Bloom and Sky Bison and replaced with Brace
+
 ##### Dependencies
 > - discord.py
